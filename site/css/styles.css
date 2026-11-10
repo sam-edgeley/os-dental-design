@@ -359,34 +359,71 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 /* 6. Hero (Home) and page heads (other pages) ---------------------------- */
 
-.hero {
-  position: relative;
-  overflow: hidden;
-  background: #eff1f5;       /* matches the edge of the hero photograph */
+/* Home hero: the headline beside a white relief, with an example case
+   card floating on it. The planes sit straight on the tinted band. */
+.hero { position: relative; overflow: hidden; background: var(--paper-alt); }
+.hero__grid { align-items: center; row-gap: 64px; padding-block: 148px 120px; }
+.hero__text { grid-column: 1 / span 6; display: grid; gap: 24px; }
+.hero__visual { grid-column: 8 / span 5; position: relative; margin: 0 0 40px; }
+.hero__visual .relief { background: transparent; overflow: visible; }
+@media (max-width: 959px) {
+  .hero__grid { padding-block: 120px 72px; }
+  .hero__text,
+  .hero__visual { grid-column: 1 / -1; }
+  .hero__visual { width: min(100%, 560px); }
 }
-.hero__media { position: relative; }
-.hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 72% 50%;
-}
-.hero__content { position: relative; z-index: 1; }
-.hero__text { display: grid; gap: 24px; max-width: 600px; }
 
-@media (min-width: 860px) {
-  .hero { display: flex; align-items: center; min-height: clamp(640px, 88vh, 820px); }
-  .hero__media { position: absolute; inset: 0; }
-  .hero__content { width: 100%; padding-block: 140px 96px; }
-  .hero__text { max-width: min(600px, 50%); }
+/* Example case card: shows a case going in and coming back */
+.case-card {
+  position: absolute;
+  left: -10%;
+  bottom: -40px;
+  z-index: 2;
+  width: min(380px, 84%);
+  padding: 20px 22px 18px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
 }
-/* Phones: headline first, photograph underneath */
-@media (max-width: 859px) {
-  .hero { display: flex; flex-direction: column; }
-  .hero__content { order: 1; padding-block: 120px 48px; }
-  .hero__media { order: 2; aspect-ratio: 16 / 11; }
-  .hero__media img { object-position: 80% 50%; }
+.case-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
 }
+.case-card__head .label { color: var(--ink-soft); }
+.case-card__list li {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: baseline;
+  padding-block: 9px;
+  border-bottom: 1px solid var(--rule);
+  font-size: .9375rem;
+  line-height: 1.4;
+}
+.case-card__list .mono { color: var(--ink-soft); white-space: nowrap; }
+.case-card__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+.case-card__foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  color: var(--accent);
+}
+/* Narrower screens: the card drops below the planes, overlapping their edge */
+@media (max-width: 959px) {
+  .hero__visual { margin-bottom: 0; }
+  .case-card { position: relative; left: auto; bottom: auto; width: min(380px, 92%); margin-top: -64px; }
+}
+
 
 .page-head { padding-top: clamp(40px, 5vw, 80px); }
 .page-head__grid { align-items: center; row-gap: 56px; }
@@ -458,6 +495,9 @@ main > .section:not(.section--alt):last-child { padding-bottom: 0; }
 @media (max-width: 959px) {
   .panel { grid-column: 1 / -1; }
 }
+
+/* A whole photograph or render, uncropped */
+.photo { width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-1); }
 
 /* Figure captions */
 .figcaption {
@@ -552,7 +592,26 @@ main > .section:not(.section--alt):last-child { padding-bottom: 0; }
   gap: 56px var(--gutter);
 }
 .step { display: grid; gap: 14px; align-content: start; }
-.step__num { margin-top: 8px; color: var(--accent); }
+.step__icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  background: var(--paper-alt);
+  color: var(--accent);
+}
+.step__icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.step__num { color: var(--accent); }
 .step__text { max-width: 26em; color: var(--ink-soft); }
 .step__text a { color: var(--accent); }
 @media (max-width: 859px) {
@@ -801,3 +860,4 @@ input[type="file"].input::file-selector-button {
   font-size: .6875rem;
   line-height: 1.4;
 }
+.draft-tag--top { top: 12px; bottom: auto; }

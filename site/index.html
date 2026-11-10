@@ -42,12 +42,7 @@
 
     <!-- 1. What Owen does -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__media">
-        <!-- PLACEHOLDER IMAGE: see images/README.md, slot 1 -->
-        <img src="images/placeholder-hero-crown.webp" alt="A white zirconia molar crown on a bright white surface" width="1600" height="900" fetchpriority="high">
-        <span class="draft-tag">Placeholder render · replace with a photo of one of Owen's crowns</span>
-      </div>
-      <div class="wrap hero__content">
+      <div class="wrap grid hero__grid">
         <div class="hero__text">
           <p class="label eyebrow">Owen · Dental CAD designer · London</p>
           <h1 id="hero-title" class="display-xl">Remote dental CAD design for <span class="em">UK laboratories.</span></h1>
@@ -58,6 +53,30 @@
             <a class="link-arrow label" href="pricing.html">See pricing <span class="arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
+
+        <!-- An example case going through the workflow: shows the quick turnaround and the contact along the way.
+             The times are illustrative; the preview and approval steps depend on Q4. -->
+        <figure class="hero__visual">
+          <div class="relief" style="--ratio: 5 / 4" aria-hidden="true">
+            <span class="plane" style="--left: 0%; --top: 4%; --width: 56%; --height: 52%"></span>
+            <span class="plane plane--image" style="--left: 22%; --top: 16%; --width: 74%; --height: 62%">
+              <!-- PLACEHOLDER IMAGE: see images/README.md, slot 1 -->
+              <img src="images/placeholder-design-screen.webp" alt="" width="1600" height="1000" fetchpriority="high">
+            </span>
+            <span class="plane plane--accent" style="--left: 86%; --top: 0%; --width: 10%; --height: 12%"></span>
+            <span class="draft-tag draft-tag--top">Illustrative · example times; the preview step depends on Q4</span>
+          </div>
+          <div class="case-card">
+            <p class="case-card__head"><span class="label">Example case</span><span class="mono">Crown · 36</span></p>
+            <ol class="case-card__list">
+              <li><span class="case-card__dot" aria-hidden="true"></span><span>Scan received</span><span class="mono">Mon 09:10</span></li>
+              <li><span class="case-card__dot" aria-hidden="true"></span><span>Design preview sent</span><span class="mono">Mon 15:40</span></li>
+              <li><span class="case-card__dot" aria-hidden="true"></span><span>Approved by your lab</span><span class="mono">Mon 16:05</span></li>
+              <li><span class="case-card__dot" aria-hidden="true"></span><span>Files back, ready to mill</span><span class="mono">Tue 10:30</span></li>
+            </ol>
+            <p class="case-card__foot mono"><span>Turnaround</span><span>25 h</span></p>
+          </div>
+        </figure>
       </div>
     </section>
 
@@ -70,31 +89,25 @@
         </div>
         <ol class="steps">
           <li class="step">
-            <!-- IMAGE TO SOURCE: see images/README.md, slot 3 -->
-            <div class="slot" style="--ratio: 4 / 3">
-              <span class="slot__tag mono">Image to source · 4:3</span>
-              <span class="slot__desc">exocad screenshot: a lab's scan as it arrives, with the prep and opposing arch visible. Patient details hidden.</span>
-            </div>
+            <span class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 14v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/><path d="M12 15V4"/><path d="M7.5 8.5 12 4l4.5 4.5"/></svg>
+            </span>
             <p class="step__num mono">Step 01</p>
             <h3 class="display-s">Send your case</h3>
             <p class="step__text">Upload your scans and prescription through the <a href="contact.html#case">Submit a case form</a><span class="tbc" title="To confirm with Owen (Q2)">, as STL, PLY or OBJ files</span>. Nothing changes in how your lab already works.</p>
           </li>
           <li class="step">
-            <!-- IMAGE TO SOURCE: see images/README.md, slot 4 -->
-            <div class="slot" style="--ratio: 4 / 3">
-              <span class="slot__tag mono">Image to source · 4:3</span>
-              <span class="slot__desc">exocad screenshot: the finished design, showing the margin line, contacts and occlusion.</span>
-            </div>
+            <span class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4 4v-4h-.5A1.5 1.5 0 0 1 4 14.5v-9A1.5 1.5 0 0 1 5.5 4z"/><path d="m8.5 10 2.5 2.5 4.5-4.5"/></svg>
+            </span>
             <p class="step__num mono">Step 02</p>
             <h3 class="display-s">I design it, you approve it</h3>
             <p class="step__text">I design it in exocad <span class="tbc" title="To confirm with Owen (Q4)">and send you a preview to approve</span>. You deal directly with me, the person designing your case, <span class="tbc" title="To confirm with Owen (Q4)">by email, phone or WhatsApp</span>.</p>
           </li>
           <li class="step">
-            <!-- IMAGE TO SOURCE: see images/README.md, slot 5 -->
-            <div class="slot" style="--ratio: 4 / 3">
-              <span class="slot__tag mono">Image to source · 4:3</span>
-              <span class="slot__desc">The exported STL, or the milled or printed restoration on a plain white surface.</span>
-            </div>
+            <span class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+            </span>
             <p class="step__num mono">Step 03</p>
             <h3 class="display-s">Files back in 24–48 hours</h3>
             <p class="step__text">Finished files come back within 24–48 hours, depending on complexity<span class="tbc" title="To confirm with Owen (Q2)">, as STLs ready for your mill or printer</span>. <span class="tbc" title="To confirm with Owen (Q5)">Redesigns are free until you're happy.</span></p>
@@ -123,17 +136,10 @@
               <li><span class="mono">05</span><span>Splints and other CAD appliances, on request</span></li>
             </ol>
           </div>
-          <!-- Image slot from the copy doc: a headshot of Owen, or an exocad screenshot of a finished design (Q7) -->
+          <!-- Illustrative render for now (Q7). Replace with an exocad screenshot of one of Owen's own designs. -->
           <figure class="split__figure">
-            <div class="relief" style="--ratio: 6 / 5">
-              <span class="plane" style="--left: 8%; --top: 12%; --width: 52%; --height: 58%"></span>
-              <span class="plane plane--image" style="--left: 26%; --top: 30%; --width: 62%; --height: 56%">
-                <img src="images/placeholder-design-screen.webp" alt="Placeholder: a molar crown design shown as a colour thickness map" width="1600" height="1000" loading="lazy">
-              </span>
-              <span class="plane plane--accent" style="--left: 74%; --top: 12%; --width: 11%; --height: 13%"></span>
-              <span class="plane" style="--left: 12%; --top: 74%; --width: 18%; --height: 15%"></span>
-            </div>
-            <figcaption class="figcaption mono"><span>Fig. 01</span><span class="tbc" title="Image to source (Q7)">Placeholder render. Replace with an exocad screenshot of one of Owen's finished designs, or his headshot.</span></figcaption>
+            <img class="photo" src="images/illustrative-splint-design.webp" alt="A digital occlusal splint design on upper and lower models, with a colour map of its thickness" width="1376" height="768" loading="lazy">
+            <figcaption class="figcaption mono"><span>Fig. 01</span><span class="tbc" title="Image to source (Q7)">Illustrative render. Replace with an exocad screenshot of one of Owen's own designs.</span></figcaption>
           </figure>
         </div>
       </div>
