@@ -1,0 +1,841 @@
+/* ==========================================================================
+   OS Dental Design · site styles · FIRST DRAFT
+
+   The tokens in :root follow "Sam's choices" in the OS Dental Brand Choices
+   artifact (10 Nov 2026): bright white, cobalt, Manrope, IBM Plex Mono,
+   soft shadows, crisp corners, white relief, airy spacing.
+   The design system is not final. When it is, change the values in :root
+   and most of the site follows.
+
+   Contents
+     1. Fonts            6. Hero and page heads   11. Price table
+     2. Tokens           7. Sections              12. Forms
+     3. Base             8. White relief          13. Footer
+     4. Type             9. Image slots           14. Draft markers
+     5. Header and nav  10. Lists and specs
+   ========================================================================== */
+
+
+/* 1. Fonts: self-hosted, so the site makes no requests to Google
+   (SIL Open Font License; licences are in /fonts) ------------------------ */
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope-latin-variable.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/ibm-plex-mono-latin-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/ibm-plex-mono-latin-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* 2. Tokens -------------------------------------------------------------- */
+
+:root {
+  /* Colour: bright white ground, cobalt accent, steel secondary */
+  --paper: #ffffff;          /* the page */
+  --paper-alt: #f1f3f8;      /* tinted band: behind the white relief and the raised panel */
+  --ink: #121417;            /* text */
+  --ink-soft: #5a5f67;       /* ledes, captions, labels */
+  --rule: #e3e5e8;           /* hairlines */
+  --rule-strong: #868c94;    /* form field underlines */
+  --accent: #1f3aa8;         /* Cobalt: buttons, emphasis, current page, focus */
+  --on-accent: #ffffff;
+  --accent-soft: #c3cbec;
+  --secondary: #bcc5d1;      /* Steel: the accent's quiet partner */
+  --placeholder: #e7eaf0;    /* empty image slots */
+
+  /* Type: Manrope for headlines and text, IBM Plex Mono for technical figures */
+  --font-head: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --head-weight: 200;
+  --head-tracking: -0.035em;
+
+  /* Depth and shape: soft shadows, crisp 2px corners */
+  --shadow-1: 0 1px 2px rgba(18, 20, 23, .05), 0 6px 14px -4px rgba(18, 20, 23, .10);
+  --shadow-2: 0 1px 3px rgba(18, 20, 23, .04), 0 20px 48px -16px rgba(18, 20, 23, .18);
+  --radius: 2px;
+
+  /* Space: airy, 168px between sections on a wide screen */
+  --space-section: clamp(88px, 6rem + 6vw, 168px);
+  --page-margin: clamp(20px, 5vw, 64px);
+  --gutter: 24px;
+  --content-max: 1312px;
+
+  /* Motion */
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --quick: 200ms;
+}
+
+
+/* 3. Base ---------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  color-scheme: light;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 24px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;      /* 17px */
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: 3px; }
+p, h1, h2, h3, figure, blockquote, dl, dd { margin: 0; }
+ol, ul { margin: 0; padding: 0; list-style: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px; top: -100px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+.skip-link:focus { top: 16px; }
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--content-max) + 2 * var(--page-margin));
+  margin-inline: auto;
+  padding-inline: var(--page-margin);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+
+
+/* 4. Type ---------------------------------------------------------------- */
+
+.display-xl,
+.display-l,
+.display-m,
+.display-s {
+  font-family: var(--font-head);
+  font-weight: var(--head-weight);
+  letter-spacing: var(--head-tracking);
+  text-wrap: balance;
+}
+.display-xl { font-size: clamp(2.5rem, 1.55rem + 3.4vw, 4rem);      line-height: 1.04; }
+.display-l  { font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.375rem); line-height: 1.08; }
+.display-m  { font-size: clamp(1.75rem, 1.3rem + 1.9vw, 2.75rem);   line-height: 1.12; }
+.display-s  {
+  font-size: clamp(1.3125rem, 1.15rem + .7vw, 1.75rem);
+  line-height: 1.25;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+/* Headline emphasis: the last phrase, upright, in the accent */
+.em { color: var(--accent); }
+
+.lede {
+  max-width: 34em;
+  color: var(--ink-soft);
+  font-size: clamp(1.125rem, 1.02rem + .4vw, 1.3125rem);
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+/* Labels, eyebrows, nav and buttons: small capitals */
+.label {
+  font-family: var(--font-body);
+  font-size: .75rem;
+  line-height: 1.35;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Technical figures: turnaround, file types, tooth numbers, captions */
+.mono {
+  font-family: var(--font-mono);
+  font-size: .8125rem;
+  line-height: 1.55;
+  letter-spacing: .01em;
+}
+
+.eyebrow { color: var(--ink-soft); }
+.prose { max-width: 34em; }
+.prose > * + * { margin-top: 1em; }
+.prose a { color: var(--accent); }
+
+
+/* Buttons and links ------------------------------------------------------ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 0 28px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: var(--shadow-1);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--quick) var(--ease), border-color var(--quick) var(--ease);
+  /* label type */
+  font-family: var(--font-body);
+  font-size: .75rem;
+  line-height: 1.2;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.btn:hover { background: var(--ink); border-color: var(--ink); }
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+  transition: color var(--quick) var(--ease);
+}
+.link-arrow:hover { color: var(--accent); }
+
+.arrow { display: inline-block; transition: transform var(--quick) var(--ease); }
+.btn:hover .arrow,
+.link-arrow:hover .arrow { transform: translateX(4px); }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 32px;
+  margin-top: 12px;
+}
+
+
+/* 5. Header and nav ------------------------------------------------------ */
+
+.site-header { position: relative; z-index: 20; }
+
+/* Home: the header sits on top of the hero photograph */
+.site-header--overlay { position: absolute; left: 0; right: 0; }
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+  padding-block: 24px;
+}
+
+/* Wordmark until the logo exists: OS | DENTAL DESIGN */
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.wordmark__os {
+  font-family: var(--font-head);
+  font-weight: 200;
+  font-size: 3.2em;
+  letter-spacing: -0.02em;
+  line-height: .8;
+}
+.wordmark__rule {
+  width: 1px;
+  height: 2.4em;
+  margin-inline: 1em;
+  background: currentColor;
+}
+.wordmark__name {
+  margin-right: -.3em;
+  font-size: .95em;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.site-nav { margin-left: auto; }
+.site-nav ul { display: flex; align-items: center; gap: 36px; }
+.site-nav a {
+  display: inline-block;
+  padding-block: 6px;
+  text-decoration: none;
+  transition: color var(--quick) var(--ease);
+}
+.site-nav a:hover { color: var(--accent); }
+.site-nav a[aria-current="page"] { color: var(--accent); box-shadow: 0 1px 0 0 currentColor; }
+.site-nav .nav-cta { padding-bottom: 3px; border-bottom: 1px solid currentColor; }
+
+.menu-toggle { display: none; }
+
+@media (max-width: 859px) {
+  .js .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-left: auto;
+    padding: 0 16px;
+    border: 1px solid var(--ink);
+    border-radius: var(--radius);
+    background: transparent;
+    cursor: pointer;
+  }
+  .js .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    padding: 4px var(--page-margin) 24px;
+    background: var(--paper);
+    box-shadow: var(--shadow-2);
+  }
+  .js.nav-open .site-nav { display: block; }
+  .js .site-nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+  .js .site-nav a,
+  .js .site-nav .nav-cta {
+    display: block;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    box-shadow: none;
+  }
+  /* Without JavaScript the links simply wrap under the wordmark */
+  html:not(.js) .site-nav { margin-left: 0; width: 100%; }
+  html:not(.js) .site-nav ul { flex-wrap: wrap; gap: 8px 24px; }
+}
+
+
+/* 6. Hero (Home) and page heads (other pages) ---------------------------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #eff1f5;       /* matches the edge of the hero photograph */
+}
+.hero__media { position: relative; }
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% 50%;
+}
+.hero__content { position: relative; z-index: 1; }
+.hero__text { display: grid; gap: 24px; max-width: 600px; }
+
+@media (min-width: 860px) {
+  .hero { display: flex; align-items: center; min-height: clamp(640px, 88vh, 820px); }
+  .hero__media { position: absolute; inset: 0; }
+  .hero__content { width: 100%; padding-block: 140px 96px; }
+  .hero__text { max-width: min(600px, 50%); }
+}
+/* Phones: headline first, photograph underneath */
+@media (max-width: 859px) {
+  .hero { display: flex; flex-direction: column; }
+  .hero__content { order: 1; padding-block: 120px 48px; }
+  .hero__media { order: 2; aspect-ratio: 16 / 11; }
+  .hero__media img { object-position: 80% 50%; }
+}
+
+.page-head { padding-top: clamp(40px, 5vw, 80px); }
+.page-head__grid { align-items: center; row-gap: 56px; }
+.page-head__text { grid-column: 1 / span 6; display: grid; gap: 24px; align-content: start; }
+.page-head__figure { grid-column: 8 / span 5; }
+.page-head__text--wide { grid-column: 1 / span 8; }
+.page-head__figure--portrait { grid-column: 9 / span 4; }
+
+@media (max-width: 959px) {
+  .page-head__text,
+  .page-head__text--wide,
+  .page-head__figure { grid-column: 1 / -1; }
+  .page-head__figure--portrait { max-width: 22rem; }
+}
+
+
+/* 7. Sections ------------------------------------------------------------ */
+
+.section { padding-block: var(--space-section); }
+.section--alt { background: var(--paper-alt); }
+
+/* Two plain sections in a row share one gap; the hairline above the next
+   section heading does the separating. */
+.section:not(.section--alt) + .section:not(.section--alt) { padding-top: 0; }
+
+/* Section heading: hairline, number and label in the margin, headline */
+.section-head {
+  align-items: baseline;
+  row-gap: 16px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+}
+.section-head__meta {
+  grid-column: 1 / span 3;
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  color: var(--ink-soft);
+}
+.section-head > h2 { grid-column: 4 / span 9; }
+@media (max-width: 859px) {
+  .section-head__meta,
+  .section-head > h2 { grid-column: 1 / -1; }
+}
+
+/* Text beside a figure */
+.split { align-items: start; row-gap: 56px; }
+.split__text { grid-column: 1 / span 5; display: grid; gap: 40px; }
+.split__figure { grid-column: 7 / span 6; }
+.split__text--offset { grid-column: 4 / span 5; }
+.split__aside { grid-column: 9 / span 4; }
+@media (max-width: 959px) {
+  .split__text,
+  .split__figure,
+  .split__text--offset,
+  .split__aside { grid-column: 1 / -1; }
+}
+
+/* Principles: three words */
+.principles { row-gap: 32px; }
+.principles__label { grid-column: 1 / span 3; padding-top: 22px; color: var(--ink-soft); }
+.principles__list {
+  grid-column: 4 / span 9;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gutter);
+}
+.principles__list li {
+  display: grid;
+  gap: 20px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+}
+.principles__list .mono { color: var(--ink-soft); }
+@media (max-width: 1023px) {
+  .principles__label,
+  .principles__list { grid-column: 1 / -1; }
+}
+@media (max-width: 639px) {
+  .principles__list { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}
+
+/* Full-bleed photograph between sections */
+.bleed { position: relative; }
+.bleed img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+@media (max-width: 639px) {
+  .bleed img { aspect-ratio: 3 / 2; }
+}
+
+/* The bold moment: a raised white panel on the tinted band */
+.panel {
+  grid-column: 3 / span 8;
+  display: grid;
+  gap: 20px;
+  padding: clamp(32px, 5vw, 64px) clamp(24px, 5vw, 72px) clamp(36px, 5vw, 64px);
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+}
+.panel .eyebrow { margin-bottom: 4px; }
+@media (max-width: 959px) {
+  .panel { grid-column: 1 / -1; }
+}
+
+/* Figure captions */
+.figcaption {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+  color: var(--ink-soft);
+}
+.figcaption > span:first-child { color: var(--ink); white-space: nowrap; }
+
+
+/* 8. White relief: white planes lifted off the tinted band ---------------
+   Rules from the brand choices: three to five planes, overlapping; at most
+   one in the accent and it is the smallest; every plane lifts the same way;
+   a photograph or screenshot may sit on one plane; no text on the planes.
+   Position each plane with --left, --top, --width and --height (in %). */
+
+.relief {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: var(--ratio, 6 / 5);
+  background: var(--paper-alt);
+  border-radius: var(--radius);
+}
+.plane {
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  width: var(--width);
+  height: var(--height);
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+}
+.plane--accent { background: var(--accent); }
+.plane--image { overflow: hidden; }
+.plane--image img { width: 100%; height: 100%; object-fit: cover; }
+
+
+/* 9. Image slots: where a photograph is still to be sourced -------------- */
+
+.slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  aspect-ratio: var(--ratio, 4 / 3);
+  padding: 20px;
+  background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(18, 20, 23, .035) 14px 15px),
+    var(--placeholder);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.slot__tag { color: var(--ink-soft); }
+.slot__desc { max-width: 30em; font-size: .9375rem; line-height: 1.5; }
+
+
+/* 10. Lists and specs ---------------------------------------------------- */
+
+/* Spec list: the data a lab checks */
+.spec { border-top: 1px solid var(--rule); }
+.spec > div {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 16px;
+  align-items: baseline;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.spec dt { color: var(--ink-soft); }
+.spec dd { font-family: var(--font-mono); font-size: .875rem; line-height: 1.55; overflow-wrap: anywhere; }
+
+/* Service index */
+.index { border-top: 1px solid var(--rule); counter-reset: none; }
+.index__row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: 8px;
+  align-items: baseline;
+  padding-block: clamp(22px, 2.6vw, 34px);
+  border-bottom: 1px solid var(--rule);
+}
+.index__num { grid-column: 1 / span 1; color: var(--ink-soft); }
+.index__title { grid-column: 2 / span 7; }
+.index__meta { grid-column: 9 / span 4; text-align: right; color: var(--ink-soft); }
+@media (max-width: 639px) {
+  .index__num { grid-column: 1 / span 2; }
+  .index__title { grid-column: 3 / -1; }
+  .index__meta { grid-column: 3 / -1; text-align: left; }
+}
+
+/* How it works: three steps */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 56px var(--gutter);
+}
+.step { display: grid; gap: 16px; align-content: start; }
+.step__num { color: var(--accent); }
+.step__text { max-width: 26em; }
+.step__text a { color: var(--accent); }
+@media (max-width: 859px) {
+  .steps { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Legal text (privacy notice) */
+.legal { grid-column: 4 / span 7; }
+.legal h2 { margin-top: 2.2em; }
+.legal h2:first-child { margin-top: 0; }
+@media (max-width: 959px) {
+  .legal { grid-column: 1 / -1; }
+}
+
+/* Contact details */
+.contact-list a { text-decoration: none; }
+.contact-list a:hover { color: var(--accent); }
+
+
+/* 11. Price table -------------------------------------------------------- */
+
+.price-table { width: 100%; border-collapse: collapse; }
+.price-table caption { text-align: left; }
+.price-table th {
+  padding: 0 16px 14px 0;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink-soft);
+  text-align: left;
+  font-size: .75rem;
+  line-height: 1.35;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.price-table td {
+  padding: 18px 16px 18px 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: baseline;
+}
+.price-table td:not(:first-child) { font-family: var(--font-mono); font-size: .875rem; }
+.price-table .is-trial td:first-child { color: var(--accent); }
+.price-notes { margin-top: 24px; color: var(--ink-soft); font-size: .9375rem; }
+
+@media (max-width: 639px) {
+  .price-table thead {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);
+  }
+  .price-table tr {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px 16px;
+    padding-block: 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .price-table td { padding: 0; border: 0; }
+  .price-table td:first-child { grid-column: 1 / -1; }
+  .price-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 2px;
+    color: var(--ink-soft);
+    font-family: var(--font-body);
+    font-size: .6875rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
+
+
+/* 12. Forms -------------------------------------------------------------- */
+
+.form-area { grid-column: 4 / span 8; display: grid; gap: 32px; }
+@media (max-width: 959px) {
+  .form-area { grid-column: 1 / -1; }
+}
+
+.form { display: grid; gap: 40px; }
+.form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 28px;
+}
+@media (max-width: 639px) {
+  .form__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.field { display: grid; gap: 8px; align-content: start; }
+.field--full { grid-column: 1 / -1; }
+.field > label,
+.fieldset > legend { color: var(--ink-soft); }
+.optional { text-transform: none; letter-spacing: 0; font-weight: 400; }
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 8px 0 10px;
+  border: 0;
+  border-bottom: 1px solid var(--rule-strong);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.125rem;
+  font-weight: 300;
+  transition: border-color var(--quick) var(--ease), box-shadow var(--quick) var(--ease);
+}
+.input::placeholder { color: #8a9098; opacity: 1; }
+.input:focus { outline: none; border-bottom-color: var(--accent); box-shadow: 0 1px 0 0 var(--accent); }
+.input:focus-visible { outline: none; }
+textarea.input { min-height: 132px; resize: vertical; line-height: 1.55; }
+select.input {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23121417' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  cursor: pointer;
+}
+input[type="file"].input { padding-block: 12px; font-size: .9375rem; font-weight: 400; cursor: pointer; }
+input[type="file"].input::file-selector-button {
+  margin-right: 16px;
+  padding: 10px 16px;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: .6875rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.hint { color: var(--ink-soft); font-size: .875rem; line-height: 1.5; }
+
+.fieldset { display: grid; gap: 12px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.fieldset > legend { padding: 0; margin-bottom: 8px; }
+
+.check { display: flex; gap: 12px; align-items: flex-start; font-size: 1rem; line-height: 1.5; cursor: pointer; }
+.check input { flex: none; width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--accent); cursor: pointer; }
+
+.form__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 32px; }
+.form__privacy { color: var(--ink-soft); font-size: .875rem; }
+.form__privacy a { color: var(--accent); }
+
+.form__status {
+  padding: 18px 20px;
+  background: var(--paper-alt);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+.form__status a { color: var(--accent); }
+
+
+/* 13. Footer ------------------------------------------------------------- */
+
+.site-footer { padding-block: var(--space-section) 36px; }
+.section--alt + .site-footer { padding-top: clamp(64px, 4rem + 3vw, 120px); }
+
+.site-footer__mast {
+  font-family: var(--font-head);
+  font-weight: 200;
+  font-size: clamp(2.5rem, 9.2vw, 8.25rem);
+  line-height: .95;
+  letter-spacing: -0.045em;
+}
+.site-footer__cols {
+  row-gap: 32px;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+  font-size: .9375rem;
+  line-height: 1.7;
+}
+.site-footer__about { grid-column: 1 / span 6; max-width: 26em; color: var(--ink-soft); }
+.site-footer__col { grid-column: span 3; }
+.site-footer__col .label { display: block; margin-bottom: 10px; color: var(--ink-soft); }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+.site-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: 64px;
+  color: var(--ink-soft);
+  font-size: .8125rem;
+}
+@media (max-width: 859px) {
+  .site-footer__about { grid-column: 1 / -1; }
+  .site-footer__col { grid-column: span 6; }
+}
+@media (max-width: 479px) {
+  .site-footer__col { grid-column: 1 / -1; }
+}
+.site-footer--slim { padding-top: 0; }
+.site-footer--slim .site-footer__legal { margin-top: 0; padding-top: 28px; border-top: 1px solid var(--rule); }
+
+
+/* 14. Draft markers: delete this block, and every element that uses these
+   classes, before launch. Search the HTML for "draft-" and "tbc". -------- */
+
+/* The strip across the top of every page */
+.draft-banner { background: var(--ink); color: var(--paper); }
+.draft-banner p { padding-block: 8px; font-family: var(--font-mono); font-size: .75rem; line-height: 1.5; }
+
+/* Placeholder copy: the [bracketed] text in the copy doc, waiting on Owen.
+   The title attribute says which question settles it. */
+.tbc {
+  padding-inline: .15em;
+  background: #fdf0c4;
+  box-shadow: inset 0 -1px 0 #a86b00;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* A note for the people reviewing the draft, not for visitors */
+.draft-note {
+  max-width: 46em;
+  padding: 10px 12px;
+  border: 1px dashed #c99a2e;
+  border-radius: var(--radius);
+  background: #fdf6dc;
+  color: #5c4300;
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  line-height: 1.55;
+}
+.draft-note strong { font-weight: 500; }
+
+/* A small chip on a placeholder image */
+.draft-tag {
+  position: absolute;
+  left: 12px; bottom: 12px;
+  z-index: 2;
+  max-width: calc(100% - 24px);
+  padding: 4px 8px;
+  border: 1px dashed #c99a2e;
+  border-radius: var(--radius);
+  background: #fdf6dc;
+  color: #5c4300;
+  font-family: var(--font-mono);
+  font-size: .6875rem;
+  line-height: 1.4;
+}

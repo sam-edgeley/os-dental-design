@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get in touch · OS Dental Design</title>
+  <meta name="description" content="Ask a question, request a free trial design or submit a case. OS Dental Design, remote exocad design for dental laboratories, based in London.">
+  <!-- DRAFT: keeps the draft out of search engines. Remove at launch. -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/manrope-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.className += " js";</script>
+  <script src="js/site.js" defer></script>
+  <!-- Analytics: none yet. Cookieless analytics goes here later (PLAN.md, Phase 4). -->
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- DRAFT: remove this banner at launch -->
+  <div class="draft-banner">
+    <p class="wrap">First draft. Highlighted text is a placeholder waiting on Owen's answers. Images are placeholders too.</p>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="wordmark" href="index.html" aria-label="OS Dental Design, home">
+        <span class="wordmark__os" aria-hidden="true">OS</span><span class="wordmark__rule" aria-hidden="true"></span><span class="wordmark__name" aria-hidden="true">Dental Design</span>
+      </a>
+      <button class="menu-toggle label" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a class="label" href="services.html">Services</a></li>
+          <li><a class="label" href="services.html#prices">Prices</a></li>
+          <li><a class="label" href="index.html#about">About</a></li>
+          <li><a class="label nav-cta" href="contact.html" aria-current="page">Get in touch <span class="arrow" aria-hidden="true">→</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page head: intro and contact details -->
+    <section class="section page-head" aria-labelledby="page-title">
+      <div class="wrap grid page-head__grid">
+        <div class="page-head__text">
+          <p class="label eyebrow">Contact</p>
+          <h1 id="page-title" class="display-xl">Get in <span class="em">touch.</span></h1>
+          <p class="lede">Got a question, want a free trial design, or have a case ready to go? Get in touch below.</p>
+          <dl class="spec contact-list">
+            <div><dt class="label">Phone</dt><dd><a href="tel:+447351927514">07351 927514</a></dd></div>
+            <div><dt class="label">Email</dt><dd><a href="mailto:OSdentaldesign@outlook.com">OSdentaldesign@outlook.com</a></dd></div>
+            <div><dt class="label">Based</dt><dd>London, working remotely <span class="tbc" title="To confirm with Owen (Q1)">UK-wide or international too?</span></dd></div>
+          </dl>
+          <div class="actions">
+            <a class="link-arrow label" href="#enquiry">Send an enquiry <span class="arrow" aria-hidden="true">↓</span></a>
+            <a class="link-arrow label" href="#case">Submit a case <span class="arrow" aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <figure class="page-head__figure page-head__figure--portrait">
+          <!-- IMAGE TO SOURCE: see images/README.md, slot "Contact portrait" -->
+          <div class="slot" style="--ratio: 4 / 5">
+            <span class="slot__tag mono">Image to source · 4:5</span>
+            <span class="slot__desc">Headshot of Owen at his desk: soft daylight, plain white or pale grey background, exocad on the screen behind him.</span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Option 1: Send an enquiry -->
+    <section class="section" id="enquiry" aria-labelledby="enquiry-title">
+      <div class="wrap">
+        <div class="section-head grid">
+          <p class="section-head__meta"><span class="mono">01</span><span class="label">Send an enquiry</span></p>
+          <h2 id="enquiry-title" class="display-m">Ask a question or <span class="em">request a free trial.</span></h2>
+        </div>
+        <div class="grid">
+          <div class="form-area">
+            <p class="draft-note"><strong>Draft note</strong> · This form isn't connected and sends nothing. It goes live only once the data handling in PLAN.md (Phase 5) is agreed. Submissions are assumed to go to OSdentaldesign@outlook.com (Q9).</p>
+
+            <form class="form" id="enquiry-form" data-form="enquiry" action="#" method="post">
+              <div class="form__grid">
+                <div class="field">
+                  <label class="label" for="enq-name">Name</label>
+                  <input class="input" id="enq-name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label class="label" for="enq-org">Lab or practice</label>
+                  <input class="input" id="enq-org" name="organisation" type="text" autocomplete="organization" required>
+                </div>
+                <div class="field">
+                  <label class="label" for="enq-email">Email</label>
+                  <input class="input" id="enq-email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="field">
+                  <label class="label" for="enq-phone">Phone <span class="optional">(optional)</span></label>
+                  <input class="input" id="enq-phone" name="phone" type="tel" autocomplete="tel">
+                </div>
+                <div class="field field--full">
+                  <label class="label" for="enq-message">Message</label>
+                  <textarea class="input" id="enq-message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="field field--full">
+                  <label class="check" for="enq-trial">
+                    <input id="enq-trial" name="free_trial" type="checkbox" value="yes">
+                    <span>I'd like a free trial design</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form__foot">
+                <button class="btn" type="submit">Send enquiry <span class="arrow" aria-hidden="true">→</span></button>
+                <p class="form__privacy">Your details are used only to reply to you. See the <a href="privacy.html">privacy notice</a>.</p>
+              </div>
+
+              <p class="form__status" role="status" tabindex="-1" hidden>This form isn't connected yet, so nothing has been sent. Please email <a href="mailto:OSdentaldesign@outlook.com">OSdentaldesign@outlook.com</a> or call <a href="tel:+447351927514">07351 927514</a>.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Option 2: Submit a case -->
+    <!-- Note from the copy doc: every field below, and which are required, is proposed and waiting on Owen (Q8). -->
+    <section class="section" id="case" aria-labelledby="case-title">
+      <div class="wrap">
+        <div class="section-head grid">
+          <p class="section-head__meta"><span class="mono">02</span><span class="label">Submit a case</span></p>
+          <h2 id="case-title" class="display-m">Send a case <span class="em">ready for design.</span></h2>
+        </div>
+        <div class="grid">
+          <div class="form-area">
+            <p class="draft-note"><strong>Draft note</strong> · Not connected. The fields are proposed and waiting on Owen (Q8). PLAN.md treats patient scans and photos as special category health data that shouldn't come through the website, so agree a secure transfer route before the file upload goes live (Q9).</p>
+
+            <form class="form" id="case-form" data-form="case" action="#" method="post" enctype="multipart/form-data">
+              <div class="form__grid">
+                <div class="field">
+                  <label class="label" for="case-org">Lab or practice name</label>
+                  <input class="input" id="case-org" name="organisation" type="text" autocomplete="organization" required>
+                </div>
+                <div class="field">
+                  <label class="label" for="case-name">Contact name</label>
+                  <input class="input" id="case-name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label class="label" for="case-email">Email</label>
+                  <input class="input" id="case-email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="field">
+                  <label class="label" for="case-phone">Phone <span class="optional">(optional)</span></label>
+                  <input class="input" id="case-phone" name="phone" type="tel" autocomplete="tel">
+                </div>
+
+                <div class="field">
+                  <label class="label" for="case-ref">Case reference</label>
+                  <input class="input" id="case-ref" name="case_reference" type="text" required aria-describedby="case-ref-hint">
+                  <p class="hint" id="case-ref-hint">Your own case number. No patient names, please.</p>
+                </div>
+                <div class="field">
+                  <label class="label" for="case-type">Restoration type</label>
+                  <select class="input" id="case-type" name="restoration_type" required>
+                    <option value="">Choose one</option>
+                    <option>Crown &amp; bridge</option>
+                    <option>Veneer</option>
+                    <option>Implant restoration</option>
+                    <option>Full-arch / All-on-X</option>
+                    <option>Digital wax-up</option>
+                    <option>Splint</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="label" for="case-teeth">Tooth number(s)</label>
+                  <input class="input" id="case-teeth" name="teeth" type="text" placeholder="e.g. 36" required aria-describedby="case-teeth-hint">
+                  <p class="hint" id="case-teeth-hint"><span class="tbc" title="To confirm with Owen (Q9)">FDI (e.g. 36), Palmer (e.g. LL6) or a clickable tooth chart?</span></p>
+                </div>
+                <div class="field">
+                  <label class="label" for="case-material">Material and shade</label>
+                  <input class="input" id="case-material" name="material_shade" type="text" required>
+                </div>
+                <div class="field field--full">
+                  <label class="label" for="case-system">Milling or printing system</label>
+                  <input class="input" id="case-system" name="production_system" type="text" required>
+                </div>
+                <div class="field field--full">
+                  <label class="label" for="case-implant">Implant details <span class="optional">(implant cases only)</span></label>
+                  <input class="input" id="case-implant" name="implant_details" type="text" aria-describedby="case-implant-hint">
+                  <p class="hint" id="case-implant-hint">System, platform or diameter, scan body, connection (e.g. Ti-base).</p>
+                </div>
+                <div class="field field--full">
+                  <label class="label" for="case-prefs">Design preferences <span class="optional">(optional)</span></label>
+                  <textarea class="input" id="case-prefs" name="design_preferences" rows="3" aria-describedby="case-prefs-hint"></textarea>
+                  <p class="hint" id="case-prefs-hint">Occlusal clearance, contacts, cement gap, pontic type.</p>
+                </div>
+
+                <fieldset class="fieldset">
+                  <legend class="label">Turnaround</legend>
+                  <label class="check" for="case-standard">
+                    <input id="case-standard" name="turnaround" type="radio" value="standard" required checked>
+                    <span>Standard (24–48 h)</span>
+                  </label>
+                  <label class="check" for="case-rush">
+                    <input id="case-rush" name="turnaround" type="radio" value="rush">
+                    <span><span class="tbc" title="To confirm with Owen (Q6)">Rush</span></span>
+                  </label>
+                </fieldset>
+                <div class="field">
+                  <label class="label" for="case-date">Needed by</label>
+                  <input class="input" id="case-date" name="needed_by" type="date" required>
+                </div>
+
+                <div class="field field--full">
+                  <label class="label" for="case-files">Files</label>
+                  <input class="input" id="case-files" name="files" type="file" multiple accept=".stl,.ply,.obj,.zip,.jpg,.jpeg,.png" required aria-describedby="case-files-hint">
+                  <p class="hint" id="case-files-hint">Scans <span class="tbc" title="To confirm with Owen (Q9)">(STL, PLY, OBJ, ZIP)</span> and photos (JPG, PNG). Remove any patient details first.</p>
+                </div>
+                <div class="field field--full">
+                  <label class="check" for="case-trial">
+                    <input id="case-trial" name="free_trial" type="checkbox" value="yes">
+                    <span>This is my free trial design</span>
+                  </label>
+                </div>
+                <div class="field field--full">
+                  <label class="label" for="case-notes">Notes <span class="optional">(optional)</span></label>
+                  <textarea class="input" id="case-notes" name="notes" rows="4"></textarea>
+                </div>
+              </div>
+
+              <div class="form__foot">
+                <button class="btn" type="submit">Submit case <span class="arrow" aria-hidden="true">→</span></button>
+                <p class="form__privacy">Your details are used only to handle this case. See the <a href="privacy.html">privacy notice</a>.</p>
+              </div>
+
+              <p class="form__status" role="status" tabindex="-1" hidden>This form isn't connected yet, so nothing has been sent. Please email <a href="mailto:OSdentaldesign@outlook.com">OSdentaldesign@outlook.com</a> or call <a href="tel:+447351927514">07351 927514</a>.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="site-footer__mast" aria-hidden="true">OS Dental Design</p>
+      <div class="site-footer__cols grid">
+        <p class="site-footer__about">Remote dental CAD design for laboratories, in exocad. Based in London.</p>
+        <nav class="site-footer__col" aria-label="Footer">
+          <span class="label">Pages</span>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="services.html#prices">Prices</a></li>
+            <li><a href="contact.html">Get in touch</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer__col">
+          <span class="label">Contact</span>
+          <ul class="contact-list">
+            <li><a href="tel:+447351927514">07351 927514</a></li>
+            <li><a href="mailto:OSdentaldesign@outlook.com">OSdentaldesign@outlook.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__legal">
+        <span>© 2026 OS Dental Design</span>
+        <a href="privacy.html">Privacy notice</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

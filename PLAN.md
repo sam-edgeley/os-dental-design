@@ -16,7 +16,7 @@ Tick items off as they are done and add a date, e.g. `- [x] Pick host (2026-11-1
 
 **Phase 1: Foundations**
 - [ ] Choose hosting (see options below)
-- [ ] Scaffold the site (static HTML/CSS/JS, or a static site generator)
+- [x] Scaffold the site (static HTML/CSS/JS, or a static site generator) (2026-11-10: plain HTML/CSS/JS in `site/`, one file per page, no build step)
 - [ ] Hook up auto-deploy from GitHub
 - [ ] Add a `LICENSE` that keeps the client's content and images "all rights reserved"
 
@@ -27,8 +27,11 @@ Tick items off as they are done and add a date, e.g. `- [x] Pick host (2026-11-1
 
 **Phase 3: Content**
 - [ ] Pages: Home, Services, About, Gallery/Work, Contact
+  - 2026-11-10: first draft of Home (About is a section on it), Services (with prices) and Get in touch, from the copy doc. Work/gallery waits for copy and images.
 - [ ] Optimise images and add them (see Images below)
+  - 2026-11-10: placeholder renders in place; `site/images/README.md` lists what to source for each slot.
 - [ ] Privacy notice page
+  - 2026-11-10: outline drafted in `site/privacy.html`; Owen to check and complete.
 
 **Phase 4: Analytics**
 - [ ] Add analytics (preferably cookieless)
@@ -36,7 +39,7 @@ Tick items off as they are done and add a date, e.g. `- [x] Pick host (2026-11-1
 - [ ] Admin hub behind a login
 
 **Phase 5: Enquiry form (only once GDPR is ready)**
-- [ ] Contact form shown as a mailto/"coming soon" placeholder, not live
+- [x] Contact form shown as a mailto/"coming soon" placeholder, not live (2026-11-10: both forms are built but send nothing; submitting points to email and phone)
 - [ ] Data handling agreed (see checklist below)
 - [ ] Form goes live, sending to the business email
 
