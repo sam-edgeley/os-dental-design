@@ -46,14 +46,15 @@ All of these deploy from GitHub on push and give free HTTPS on a custom domain.
 
 | Service | Free tier fits? | Notes |
 |---|---|---|
-| **Azure Static Web Apps (Free)** | ✅ | The same Azure + GitHub Actions workflow already used at work. Gives a preview URL for every pull request, which is handy for showing the client changes before they go live. Includes built-in login (for the admin hub) and Azure Functions (for the form later). |
-| **Cloudflare Pages** | ✅ | No bandwidth limits. Cloudflare can also be the domain registrar (sold at cost), the DNS, a free email forwarder and the free cookieless analytics, all in one place. |
+| **Azure Static Web Apps (Free)** | ⚠️ | Microsoft describes the Free plan as "for hobby or personal projects" and steers production sites to Standard (about $9/month). That's guidance rather than a ban, but the Free plan has no uptime guarantee (SLA). The same Azure + GitHub Actions workflow already used at work. Gives a preview URL for every pull request, which is handy for showing the client changes before they go live. Includes built-in login (for the admin hub) and Azure Functions (for the form later). |
+| **Cloudflare Pages** | ✅ | Commercial use is allowed on the free plan. No bandwidth limits. Cloudflare can also be the domain registrar (sold at cost), the DNS, a free email forwarder and the free cookieless analytics, all in one place. |
 | **Netlify (Free)** | ✅ | Easy to use, and has built-in form handling. The free plan now runs on monthly credits, so a traffic spike can pause the site. |
 | **GitHub Pages** | ⚠️ | The simplest option, but GitHub's terms discourage using it to host a business. Fine for demos. |
 | **Vercel (Hobby)** | ❌ | The free plan is non-commercial only, so it doesn't suit a business site. |
 
-**Recommendation:** use **Azure Static Web Apps (Free)** for hosting and **Cloudflare** for the domain, DNS and analytics.
-Azure keeps the portfolio consistent with the skills used at work, and Cloudflare is the cheapest, simplest place for the domain.
+**Recommendation:** to be decided between two options:
+- **Cloudflare Pages + Cloudflare domain/analytics:** free, allowed for commercial use, and everything in one place.
+- **Azure Static Web Apps:** matches the skills used at work. Build it on the Free plan, then move to Standard (about $9/month) when it becomes the business's live site.
 Free tiers change, so check the current limits before committing.
 
 ## Domain & email
