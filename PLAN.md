@@ -60,6 +60,7 @@ Free tiers change, so check the current limits before committing.
 ## Domain & email
 
 - **Registrar:** Cloudflare Registrar (sold at cost, no markup on renewals) or Namecheap. Keep DNS in one place.
+- **Domain bought elsewhere?** It still works with Cloudflare. Change the domain's nameservers to Cloudflare's (on the free plan) and keep paying the original registrar. Moving the domain itself to Cloudflare later is optional.
 - **Email:** for a client-facing business, use a paid mailbox: Microsoft 365 Business Basic or Google Workspace (each a few £ per user per month).
   The budget option is Zoho Mail's free plan, or Cloudflare Email Routing, which only forwards mail to an existing inbox and can't send from the domain on its own.
 
