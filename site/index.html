@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OS Dental Design · Remote dental CAD design for laboratories</title>
-  <meta name="description" content="Remote exocad design support for dental laboratories: crown and bridge, implant and full-arch work, back within 24–48 hours. Based in London.">
+  <meta name="description" content="Owen designs crown and bridge, implant and full-arch cases in exocad for dental laboratories, and sends them back within 24–48 hours. Based in London.">
   <!-- DRAFT: keeps the draft out of search engines. Remove at launch. -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -30,9 +30,8 @@
       <button class="menu-toggle label" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <ul>
-          <li><a class="label" href="services.html">Services</a></li>
-          <li><a class="label" href="services.html#prices">Prices</a></li>
-          <li><a class="label" href="index.html#about">About</a></li>
+          <li><a class="label" href="index.html" aria-current="page">About</a></li>
+          <li><a class="label" href="pricing.html">Pricing</a></li>
           <li><a class="label nav-cta" href="contact.html">Get in touch <span class="arrow" aria-hidden="true">→</span></a></li>
         </ul>
       </nav>
@@ -41,58 +40,87 @@
 
   <main id="main">
 
-    <!-- Hero: tagline, intro and the two buttons -->
+    <!-- 1. What Owen does -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__media">
-        <!-- PLACEHOLDER IMAGE: see images/README.md, slot "Home hero" -->
+        <!-- PLACEHOLDER IMAGE: see images/README.md, slot 1 -->
         <img src="images/placeholder-hero-crown.webp" alt="A white zirconia molar crown on a bright white surface" width="1600" height="900" fetchpriority="high">
         <span class="draft-tag">Placeholder render · replace with a photo of one of Owen's crowns</span>
       </div>
       <div class="wrap hero__content">
         <div class="hero__text">
-          <p class="label eyebrow">exocad design support · London</p>
+          <p class="label eyebrow">Owen · Dental CAD designer · London</p>
           <h1 id="hero-title" class="display-xl">Remote dental CAD design for <span class="em">busy laboratories.</span></h1>
-          <!-- Alternative taglines in the copy doc: "Extra exocad capacity, whenever your lab needs it" or "Reliable CAD design support, back in 24–48 hours". -->
-          <p class="lede">OS Dental Design gives dental laboratories reliable, high-quality CAD design support on a remote basis. Based in London, I take on overflow and tight-deadline cases in exocad, fitting around the way your lab already works.</p>
+          <p class="lede">I design crown and bridge, implant and full-arch cases in exocad for labs that need extra capacity, and send them back within 24–48 hours.</p>
           <div class="actions">
             <a class="btn" href="contact.html#enquiry">Request a free trial design <span class="arrow" aria-hidden="true">→</span></a>
-            <a class="link-arrow label" href="services.html">See services and prices <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="link-arrow label" href="pricing.html">See pricing <span class="arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Principles -->
-    <!-- Note from the copy doc: taken from Owen's own wording ("reliable, high-quality", "flexible support"). He hasn't chosen his three words yet (Q3). -->
-    <section class="section" aria-labelledby="principles-title">
-      <div class="wrap grid principles">
-        <h2 id="principles-title" class="label principles__label">Principles</h2>
-        <ol class="principles__list">
-          <li><span class="mono">01</span><span class="display-m">Quality</span></li>
-          <li><span class="mono">02</span><span class="display-m">Reliability</span></li>
-          <li><span class="mono">03</span><span class="display-m">Flexibility</span></li>
+    <!-- 2. How the workflow works for the lab: quick turnaround, clear communication -->
+    <section class="section" id="how-it-works" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section-head grid">
+          <p class="section-head__meta"><span class="mono">01</span><span class="label">How it works</span></p>
+          <h2 id="how-title" class="display-m">Back in 24–48 hours, <span class="em">with you in the loop.</span></h2>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <!-- IMAGE TO SOURCE: see images/README.md, slot 3 -->
+            <div class="slot" style="--ratio: 4 / 3">
+              <span class="slot__tag mono">Image to source · 4:3</span>
+              <span class="slot__desc">exocad screenshot: a lab's scan as it arrives, with the prep and opposing arch visible. Patient details hidden.</span>
+            </div>
+            <p class="step__num mono">Step 01</p>
+            <h3 class="display-s">Send your case</h3>
+            <p class="step__text">Upload your scans and prescription through the <a href="contact.html#case">Submit a case form</a><span class="tbc" title="To confirm with Owen (Q2)">, as STL, PLY or OBJ files</span>. Nothing changes in how your lab already works.</p>
+          </li>
+          <li class="step">
+            <!-- IMAGE TO SOURCE: see images/README.md, slot 4 -->
+            <div class="slot" style="--ratio: 4 / 3">
+              <span class="slot__tag mono">Image to source · 4:3</span>
+              <span class="slot__desc">exocad screenshot: the finished design, showing the margin line, contacts and occlusion.</span>
+            </div>
+            <p class="step__num mono">Step 02</p>
+            <h3 class="display-s">I design it, you approve it</h3>
+            <p class="step__text">I design it in exocad <span class="tbc" title="To confirm with Owen (Q4)">and send you a preview to approve</span>. You deal directly with me, the person designing your case, <span class="tbc" title="To confirm with Owen (Q4)">by email, phone or WhatsApp</span>.</p>
+          </li>
+          <li class="step">
+            <!-- IMAGE TO SOURCE: see images/README.md, slot 5 -->
+            <div class="slot" style="--ratio: 4 / 3">
+              <span class="slot__tag mono">Image to source · 4:3</span>
+              <span class="slot__desc">The exported STL, or the milled or printed restoration on a plain white surface.</span>
+            </div>
+            <p class="step__num mono">Step 03</p>
+            <h3 class="display-s">Files back in 24–48 hours</h3>
+            <p class="step__text">Finished files come back within 24–48 hours, depending on complexity<span class="tbc" title="To confirm with Owen (Q2)">, as STLs ready for your mill or printer</span>. <span class="tbc" title="To confirm with Owen (Q5)">Redesigns are free until you're happy.</span></p>
+          </li>
         </ol>
       </div>
     </section>
 
-    <!-- Experience and approach (this is the "About" section) -->
-    <section class="section" id="about" aria-labelledby="about-title">
+    <!-- 3. What I design, and who's doing it -->
+    <section class="section" id="what-i-design" aria-labelledby="design-title">
       <div class="wrap">
         <div class="section-head grid">
-          <p class="section-head__meta"><span class="mono">01</span><span class="label">Experience and approach</span></p>
-          <h2 id="about-title" class="display-m">Six years in dental CAD, <span class="em">specialising in exocad.</span></h2>
+          <p class="section-head__meta"><span class="mono">02</span><span class="label">What I design</span></p>
+          <h2 id="design-title" class="display-m">From a single crown <span class="em">to a full arch.</span></h2>
         </div>
         <div class="split grid">
           <div class="split__text">
             <div class="prose">
-              <p>I've worked in dental CAD for six years and specialise in exocad. <span class="tbc" title="To confirm with Owen (Q4)">I'm a GDC-registered dental technician, qualified in …</span> I work alongside your existing workflow, <span class="tbc" title="To confirm with Owen (Q4)">and send a design preview for your sign-off before the final files go back</span>.</p>
+              <p>I've worked in dental CAD for six years and specialise in exocad. <span class="tbc" title="To confirm with Owen (Q4)">I'm a GDC-registered dental technician, qualified in …</span> Use me for the odd overflow case or as a regular arrangement.</p>
             </div>
-            <dl class="spec">
-              <div><dt class="label">Experience</dt><dd>6 years in dental CAD</dd></div>
-              <div><dt class="label">Software</dt><dd>exocad</dd></div>
-              <div><dt class="label">Registration</dt><dd><span class="tbc" title="To confirm with Owen (Q4)">GDC number</span></dd></div>
-              <div><dt class="label">Based</dt><dd>London, working remotely</dd></div>
-            </dl>
+            <ol class="services-list">
+              <li><span class="mono">01</span><span>Crown &amp; bridge and veneers</span></li>
+              <li><span class="mono">02</span><span>Implant restorations</span></li>
+              <li><span class="mono">03</span><span>Full-arch / All-on-X cases, including split bar files</span></li>
+              <li><span class="mono">04</span><span>Digital wax-ups</span></li>
+              <li><span class="mono">05</span><span>Splints and other CAD appliances, on request</span></li>
+            </ol>
           </div>
           <!-- Image slot from the copy doc: a headshot of Owen, or an exocad screenshot of a finished design (Q7) -->
           <figure class="split__figure">
@@ -110,46 +138,16 @@
       </div>
     </section>
 
-    <!-- Full-bleed break -->
-    <figure class="bleed">
-      <!-- PLACEHOLDER IMAGE: see images/README.md, slot "Home break" -->
-      <img src="images/placeholder-window-light.webp" alt="" width="1600" height="800" loading="lazy">
-      <span class="draft-tag">Placeholder render · replace with daylight in Owen's workspace</span>
-    </figure>
-
-    <!-- What to expect -->
-    <section class="section" aria-labelledby="expect-title">
-      <div class="wrap">
-        <div class="section-head grid">
-          <p class="section-head__meta"><span class="mono">02</span><span class="label">What to expect</span></p>
-          <h2 id="expect-title" class="display-m">Most cases back within <span class="em">24–48 hours.</span></h2>
-        </div>
-        <div class="split grid">
-          <div class="split__text split__text--offset">
-            <div class="prose">
-              <p>Most cases come back within 24–48 hours, depending on complexity. Use me for the odd overflow case or as a regular arrangement, <span class="tbc" title="To confirm with Owen (Q5)">with free redesigns until you're happy</span>. Not sure yet? Your first crown design is free, so you can judge the quality before you commit.</p>
-            </div>
-          </div>
-          <dl class="spec split__aside">
-            <div><dt class="label">Turnaround</dt><dd>24–48 h, by complexity</dd></div>
-            <div><dt class="label">Arrangement</dt><dd>Occasional or regular</dd></div>
-            <div><dt class="label">Redesigns</dt><dd><span class="tbc" title="To confirm with Owen (Q5)">Free until you're happy</span></dd></div>
-            <div><dt class="label">First crown</dt><dd>Free trial design</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
     <!-- The bold moment: raised panel on the tinted band -->
     <section class="section section--alt" aria-labelledby="trial-title">
       <div class="wrap grid">
         <div class="panel">
           <p class="label eyebrow">Free trial</p>
           <h2 id="trial-title" class="display-l">Your first crown design <span class="em">is free.</span></h2>
-          <p class="lede">Send a case and judge the quality before you commit.</p>
+          <p class="lede">Judge the quality before you commit.</p>
           <div class="actions">
             <a class="btn" href="contact.html#enquiry">Request a free trial design <span class="arrow" aria-hidden="true">→</span></a>
-            <a class="link-arrow label" href="services.html">See services and prices <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="link-arrow label" href="pricing.html">See pricing <span class="arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
@@ -165,9 +163,8 @@
         <nav class="site-footer__col" aria-label="Footer">
           <span class="label">Pages</span>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="services.html#prices">Prices</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
             <li><a href="contact.html">Get in touch</a></li>
           </ul>
         </nav>

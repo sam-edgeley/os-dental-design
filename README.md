@@ -6,8 +6,8 @@ The website for OS Dental Design: remote exocad design support for dental labora
 
 | Page | File | From |
 |---|---|---|
-| Home (includes the About section) | `site/index.html` | Copy doc: Home page |
-| Services and prices | `site/services.html` | Copy doc: Services page |
+| About (the home page) | `site/index.html` | Copy doc: Home and Services pages, streamlined |
+| Pricing | `site/pricing.html` | Copy doc: Services page, price list only |
 | Get in touch (enquiry and case forms) | `site/contact.html` | Copy doc: Get in touch page |
 | Privacy notice (outline) | `site/privacy.html` | `PLAN.md`: Enquiry form & GDPR |
 | Page not found | `site/404.html` | |
@@ -41,7 +41,7 @@ Then open http://localhost:8000. You can also open the HTML files straight from 
 ## Editing
 
 - **Words:** edit the page's HTML file directly. Each page is complete in itself.
-- **Header and footer:** these are repeated in every page, so change them in all five files.
+- **Header and footer:** these are repeated in every page, so change them in every HTML file.
 - **Colours, fonts, spacing, shadows:** change the tokens at the top of `css/styles.css`. When the design system is final, swapping these values updates most of the site.
 - **Images:** see `site/images/README.md`.
 

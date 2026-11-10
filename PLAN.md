@@ -27,7 +27,7 @@ Tick items off as they are done and add a date, e.g. `- [x] Pick host (2026-11-1
 
 **Phase 3: Content**
 - [ ] Pages: Home, Services, About, Gallery/Work, Contact
-  - 2026-11-10: first draft of Home (About is a section on it), Services (with prices) and Get in touch, from the copy doc. Work/gallery waits for copy and images.
+  - 2026-11-10: first draft of About (the home page), Pricing and Get in touch, from the copy doc. Services were folded into About; the old Services page is now just the price list. Work/gallery waits for copy and images.
 - [ ] Optimise images and add them (see Images below)
   - 2026-11-10: placeholder renders in place; `site/images/README.md` lists what to source for each slot.
 - [ ] Privacy notice page
