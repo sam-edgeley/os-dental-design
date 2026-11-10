@@ -18,13 +18,14 @@ Tick items off as they are done and add a date, e.g. `- [x] Pick host (2026-11-1
 - [x] Choose hosting (see options below) (2026-11-10: Cloudflare Workers, static assets)
 - [x] Create a `main` branch to deploy from (2026-11-10)
 - [x] Scaffold the site (static HTML/CSS/JS, or a static site generator) (2026-11-10: plain HTML/CSS/JS in `site/`, one file per page, no build step)
-- [ ] Hook up auto-deploy from GitHub (Cloudflare Workers, production branch `main`)
+- [x] Hook up auto-deploy from GitHub (2026-11-10: Cloudflare Workers, production branch `main`; branch previews behind Cloudflare Access)
 - [ ] Add a `LICENSE` that keeps the client's content and images "all rights reserved"
 
 **Phase 2: Domain & email**
 - [ ] Choose and buy the domain
 - [ ] Point the domain at the site (HTTPS is automatic)
 - [ ] Set up the business email on the domain (MX, SPF, DKIM, DMARC records)
+- [ ] Redirect `www` to the main domain
 
 **Phase 3: Content**
 - [ ] Pages: Home, Services, About, Gallery/Work, Contact
@@ -38,6 +39,12 @@ Tick items off as they are done and add a date, e.g. `- [x] Pick host (2026-11-1
 - [ ] Add analytics (preferably cookieless)
 - [ ] Cookie banner, only if anything non-essential sets cookies
 - [ ] Admin hub behind a login
+
+**Launch**
+- [ ] Owen signs off the copy, images and privacy notice
+- [ ] Remove the draft markers (list in `README.md`), including `noindex`
+- [ ] Turn off the `workers.dev` address once the domain works
+- [ ] Add the site to Google Search Console and a Google Business Profile
 
 **Phase 5: Enquiry form (only once GDPR is ready)**
 - [x] Contact form shown as a mailto/"coming soon" placeholder, not live (2026-11-10: both forms are built but send nothing; submitting points to email and phone)
