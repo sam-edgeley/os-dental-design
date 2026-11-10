@@ -6,5 +6,7 @@
   "assets": {
     "directory": "./site",
     "not_found_handling": "404-page"
-  }
+  },
+  // Turns on Worker Previews, used by `npx wrangler preview` for non-main branches.
+  "previews": {}
 }
