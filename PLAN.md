@@ -15,15 +15,17 @@ Tick items off as they are done and add a date, e.g. `- [x] Pick host (2026-11-1
 ## Progress
 
 **Phase 1: Foundations**
-- [ ] Choose hosting (see options below)
+- [x] Choose hosting (see options below) (2026-11-10: Cloudflare Workers, static assets)
+- [x] Create a `main` branch to deploy from (2026-11-10)
 - [x] Scaffold the site (static HTML/CSS/JS, or a static site generator) (2026-11-10: plain HTML/CSS/JS in `site/`, one file per page, no build step)
-- [ ] Hook up auto-deploy from GitHub
+- [x] Hook up auto-deploy from GitHub (2026-11-10: Cloudflare Workers, production branch `main`; branch previews behind Cloudflare Access)
 - [ ] Add a `LICENSE` that keeps the client's content and images "all rights reserved"
 
 **Phase 2: Domain & email**
 - [ ] Choose and buy the domain
 - [ ] Point the domain at the site (HTTPS is automatic)
 - [ ] Set up the business email on the domain (MX, SPF, DKIM, DMARC records)
+- [ ] Redirect `www` to the main domain
 
 **Phase 3: Content**
 - [ ] Pages: Home, Services, About, Gallery/Work, Contact
@@ -37,6 +39,12 @@ Tick items off as they are done and add a date, e.g. `- [x] Pick host (2026-11-1
 - [ ] Add analytics (preferably cookieless)
 - [ ] Cookie banner, only if anything non-essential sets cookies
 - [ ] Admin hub behind a login
+
+**Launch**
+- [ ] Owen signs off the copy, images and privacy notice
+- [ ] Remove the draft markers (list in `README.md`), including `noindex`
+- [ ] Turn off the `workers.dev` address once the domain works
+- [ ] Add the site to Google Search Console and a Google Business Profile
 
 **Phase 5: Enquiry form (only once GDPR is ready)**
 - [x] Contact form shown as a mailto/"coming soon" placeholder, not live (2026-11-10: both forms are built but send nothing; submitting points to email and phone)
@@ -55,7 +63,7 @@ All of these deploy from GitHub on push and give free HTTPS on a custom domain.
 | **GitHub Pages** | ⚠️ | The simplest option, but GitHub's terms discourage using it to host a business. Fine for demos. |
 | **Vercel (Hobby)** | ❌ | The free plan is non-commercial only, so it doesn't suit a business site. |
 
-**Recommendation:** to be decided between two options:
+**Decision (2026-11-10):** Cloudflare Workers, Cloudflare's current recommendation over Pages; same free tier for static sites. The two options that were considered:
 - **Cloudflare Pages + Cloudflare domain/analytics:** free, allowed for commercial use, and everything in one place.
 - **Azure Static Web Apps:** matches the skills used at work. Build it on the Free plan, then move to Standard (about $9/month) when it becomes the business's live site.
 Free tiers change, so check the current limits before committing.

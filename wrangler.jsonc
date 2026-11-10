@@ -1,0 +1,12 @@
+// Cloudflare Workers config: serves the static site in ./site.
+// "name" must match the Worker's name in the Cloudflare dashboard.
+{
+  "name": "os-dental-design",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page"
+  },
+  // Turns on Worker Previews, used by `npx wrangler preview` for non-main branches.
+  "previews": {}
+}
