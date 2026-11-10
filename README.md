@@ -45,6 +45,15 @@ Then open http://localhost:8000. You can also open the HTML files straight from 
 - **Colours, fonts, spacing, shadows:** change the tokens at the top of `css/styles.css`. When the design system is final, swapping these values updates most of the site.
 - **Images:** see `site/images/README.md`.
 
+## Hosting and workflow
+
+The site is hosted on **Cloudflare Pages**, connected to this repo:
+
+- **Production branch:** `main`. Every push to `main` goes live automatically within a minute or two.
+- **Other branches** get their own preview URL, so you can check changes before merging them into `main`.
+- **Settings:** no framework preset, no build command, build output directory `site`.
+- `site/404.html` is served automatically for missing pages.
+
 ## Draft markers, to remove before launch
 
 Search the HTML for each of these:
@@ -66,5 +75,4 @@ These are deliberately left for later (see `PLAN.md`):
 
 - **Forms:** both forms are built but send nothing. Submitting shows a message pointing to email and phone. Connect them in `js/site.js` (see `TODO(connect)`) once the data handling is agreed. Patient scans shouldn't come through the website until a secure route is agreed.
 - **Analytics:** none yet. Each page has a comment in `<head>` marking where cookieless analytics will go.
-- **Hosting:** not chosen. Point the host at the `site` folder (Cloudflare Pages: build output directory `site`; Azure Static Web Apps: `app_location: site`). Cloudflare Pages serves `404.html` automatically; Azure needs a `responseOverrides` rule in `staticwebapp.config.json`.
 - **Work/gallery page:** in the plan, but there's no copy or imagery for it yet.

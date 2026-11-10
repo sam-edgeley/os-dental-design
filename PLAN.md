@@ -15,9 +15,10 @@ Tick items off as they are done and add a date, e.g. `- [x] Pick host (2026-11-1
 ## Progress
 
 **Phase 1: Foundations**
-- [ ] Choose hosting (see options below)
+- [x] Choose hosting (see options below) (2026-11-10: Cloudflare Pages)
+- [x] Create a `main` branch to deploy from (2026-11-10)
 - [x] Scaffold the site (static HTML/CSS/JS, or a static site generator) (2026-11-10: plain HTML/CSS/JS in `site/`, one file per page, no build step)
-- [ ] Hook up auto-deploy from GitHub
+- [ ] Hook up auto-deploy from GitHub (Cloudflare Pages, production branch `main`)
 - [ ] Add a `LICENSE` that keeps the client's content and images "all rights reserved"
 
 **Phase 2: Domain & email**
@@ -55,7 +56,7 @@ All of these deploy from GitHub on push and give free HTTPS on a custom domain.
 | **GitHub Pages** | ⚠️ | The simplest option, but GitHub's terms discourage using it to host a business. Fine for demos. |
 | **Vercel (Hobby)** | ❌ | The free plan is non-commercial only, so it doesn't suit a business site. |
 
-**Recommendation:** to be decided between two options:
+**Decision (2026-11-10):** Cloudflare Pages. The two options that were considered:
 - **Cloudflare Pages + Cloudflare domain/analytics:** free, allowed for commercial use, and everything in one place.
 - **Azure Static Web Apps:** matches the skills used at work. Build it on the Free plan, then move to Standard (about $9/month) when it becomes the business's live site.
 Free tiers change, so check the current limits before committing.
