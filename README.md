@@ -47,11 +47,11 @@ Then open http://localhost:8000. You can also open the HTML files straight from 
 
 ## Hosting and workflow
 
-The site is hosted on **Cloudflare Pages**, connected to this repo:
+The site is hosted on **Cloudflare Workers** (static assets only), connected to this repo:
 
 - **Production branch:** `main`. Every push to `main` goes live automatically within a minute or two.
-- **Other branches** get their own preview URL, so you can check changes before merging them into `main`.
-- **Settings:** no framework preset, no build command, build output directory `site`.
+- **Other branches** get a preview URL. Previews are behind Cloudflare Access, so only approved accounts can open them.
+- **Config:** `wrangler.jsonc` serves the `site` folder. There's no build command; the deploy command is `npx wrangler deploy`.
 - `site/404.html` is served automatically for missing pages.
 
 ## Draft markers, to remove before launch
